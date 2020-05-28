@@ -1,0 +1,56 @@
+
+<head>
+    <title>@ViewData["Title"]</title>
+</head>
+
+<h1>@ViewData["Header"]</h1>
+
+
+    @{
+        var alunos = ViewData["Aluno"] as List<MvcMovie.Models.Aluno>;
+    }
+
+
+@foreach (MvcMovie.Models.Aluno aluno in alunos)
+    {
+        <div>
+            AlunoId: @aluno.AlunoId
+        </div>
+        <div>
+            Nome: @aluno.Nome
+        </div>
+        <div>
+            Campus: @aluno.Campus
+        </div>
+        <div>
+            Curso: @aluno.Curso
+        </div>
+        <div>
+            Sexo: @aluno.Sexo
+        </div>
+    }
+
+
+@*{
+    var aluno = ViewData["Aluno"] as Aluno;
+}*@
+@*<div>
+    AlunoId: @aluno.AlunoId
+</div>
+<div>
+    Nome: @aluno.Nome
+</div>
+<div>
+    Campus: @aluno.Campus
+</div>
+<div>
+    Curso: @aluno.Curso
+</div>
+<div>
+    Gênero: @aluno.Sexo
+</div>*@
+
+
+
+
+

@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewData["Title"] = "Welcome";
+}
+
+<h1>Welcome</h1>
+
+<ul>
+    @*Trabalhar com array na View
+        While, If numTimes <,  > ou =*@
+
+    @*foreach (int i = 0; i < (int)ViewData["NumTimes"]; i++)
+    {
+        <li>@ViewData["Message"]</li>
+    }*@
+
+    @for (int i = 0; i < (int)ViewData["NumTimes"]; i++)
+    {
+        <li>@ViewData["Message"]</li>
+    }
+</ul>
+

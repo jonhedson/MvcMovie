@@ -1,0 +1,82 @@
+﻿@model IEnumerable<MvcMovie.Models.Aluno>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<h2>Buscar</h2>
+<span>Digite o nome ou parte do nome do Aluno:</span>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <div class="form-group">
+            <div class="col-md-10">
+                <input type="text" name="pesquisa">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-10">
+                <input type="submit" value="Buscar" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<h2>Create</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.AlunoId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Campus)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Curso)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Sexo)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AlunoId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Campus)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Curso)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Sexo)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.AlunoId }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.AlunoId }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.AlunoId })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
